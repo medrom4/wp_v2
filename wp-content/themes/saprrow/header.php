@@ -1,76 +1,70 @@
 <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
 
-   <!--- Basic Page Needs
+	<!--- Basic Page Needs
    ================================================== -->
-   <meta charset="utf-8">
+	<meta charset="utf-8">
 	<title>Sparrow - Free Responsive HTML5/CSS3 Template</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-   <!-- Mobile Specific Metas
+	<!-- Mobile Specific Metas
    ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-   <!-- Script
+	<!-- Script
    ================================================== -->
 	<script src="js/modernizr.js"></script>
 
-   <!-- Favicons
+	<!-- Favicons
 	================================================== -->
-	<link rel="shortcut icon" href="favicon.ico" >
+	<link rel="shortcut icon" href="favicon.ico">
 
 </head>
 
 <body>
 
-    <?php wp_head(); ?>
+	<?php wp_head(); ?>
 
-   <!-- Header
+	<!-- Header
    ================================================== -->
-   <header>
+	<header>
 
-      <div class="row">
+		<div class="row">
 
-         <div class="twelve columns">
+			<div class="twelve columns">
 
-            <div class="logo">
-               <a href="index.html"><img alt="" src="images/logo.png"></a>
-            </div>
+				<div class="logo">
+					<a href="<?php echo home_url(); ?>">
+						<div>
+							<?php bloginfo( 'name' ); ?>
+						</div>
+						<img alt="" src="images/logo.png">
+					</a>
+				</div>
 
-            <nav id="nav-wrap">
+				<nav id="nav-wrap">
 
-               <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	            <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+					<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+					<a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+					<?php wp_nav_menu(array(
+					'theme_location'  => 'top',
+					'container'       =>  null,
+					'menu_class'      => 'nav', 
+					'menu_id'         => 'nav'
+				)); ?>
+				</nav>
+				<!-- end #nav-wrap -->
 
-               <ul id="nav" class="nav">
+			</div>
 
-	               <li class="current"><a href="index.htm">Home</a></li>
-	               <li><span><a href="blog.html">Blog</a></span>
-                     <ul>
-                        <li><a href="blog.html">Blog Index</a></li>
-                        <li><a href="single.html">Post</a></li>
-                     </ul>
-                  </li>
-                  <li><span><a href="portfolio-index.html">Portfolio</a></span>
-                     <ul>
-                        <li><a href="portfolio-index.html">Portfolio Index</a></li>
-                        <li><a href="portfolio.html">Portfolio Entry</a></li>
-                     </ul>
-                  </li>
-	               <li><a href="about.html">About</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="styles.html">Features</a></li>
+		</div>
 
-               </ul> <!-- end #nav -->
-
-            </nav> <!-- end #nav-wrap -->
-
-         </div>
-
-      </div>
-
-   </header> <!-- Header End -->
+	</header>
+	<!-- Header End -->

@@ -1,6 +1,6 @@
 <!-- footer
    ================================================== -->
-   <footer>
+   <footer id="contact">
 
       <div class="row">
 
