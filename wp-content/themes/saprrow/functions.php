@@ -3,6 +3,8 @@
     add_action( 'wp_footer', 'scripts_theme' );
 	add_action( 'after_setup_theme', 'theme_register_nav_menu' );
     add_action( 'widgets_init', 'register_my_widgets' );
+    add_filter( 'excerpt_more', 'new_excerpt_more' );
+    add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
 
     function register_my_widgets(){
     	register_sidebar( array(
@@ -15,10 +17,27 @@
 		    'after_title'   => "</h5>\n"
     	) );
     }
+    
+    
+    function new_excerpt_more( $more ){
+	global $post;
+	return '<a href="'. get_permalink($post) . '">Читать дальше...</a>';
+    }
 
 	function theme_register_nav_menu() {
 		register_nav_menu( 'top', 'Меню в шапке' );
-	}
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails', array( 'post' ) );
+		add_image_size( 'post_thumb', 1300, 500, true);
+		
+
+    function my_navigation_template( $template, $class ){
+	    return '<nav class="navigation %1$s" role="navigation">
+		        <div class="nav-links">%3$s</div>
+		    </nav>';
+        } the_posts_pagination( array(
+	       'end_size' => 2, ) ); 
+    }
 
     function style_theme() {
         wp_enqueue_style('style', get_stylesheet_uri());
