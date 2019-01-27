@@ -5,6 +5,19 @@
     add_action( 'widgets_init', 'register_my_widgets' );
     add_filter( 'excerpt_more', 'new_excerpt_more' );
     add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+    add_filter( 'document_title_separator', 'my_sep' );
+    add_filter( 'the_content', 'test_content' );
+    
+    
+    function test_content($content){
+        $content .= 'Спасибо!';
+        return $content;
+    }
+    
+    function my_sep( $sep ){
+    	$sep = ' | ';
+    	return $sep;
+    }
 
     function register_my_widgets(){
     	register_sidebar( array(
@@ -56,3 +69,20 @@
         wp_enqueue_script( 'init', get_template_directory_uri() . '/essets/js/init.js', ['jquery'], null, true);
         wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/essets/js/modernizr.js', null, null, false );
     }
+    
+    add_shortcode('my_short', 'short_function');
+        function short_function() {
+        return 'Я тут - ШОРТКОД';
+    }
+    
+    function Generate_iframe( $atts ) {
+	$atts = shortcode_atts( array(
+		'href'   => 'https://wp-kama.ru/',
+		'height' => '550px',
+		'width'  => '600px',     
+	), $atts );
+
+	return '<iframe src="'. $atts['href'] .'" width="'. $atts['width'] .'" height="'. $atts['height'] .'"> <p>Your Browser does not support Iframes.</p></iframe>';
+    }
+    add_shortcode('iframe', 'Generate_iframe');
+    // использование: [iframe href="https://wp-kama.ru/" height="480" width="640"]
