@@ -2,20 +2,10 @@
 
    <!-- Page Title
    ================================================== -->
-   <div id="page-title">
-
-      <div class="row">
-
-         <div class="ten columns centered text-center">
-            <h1>Страница с ПОСТОМ<span>.</span></h1>
-
-            <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
-            enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
-         </div>
-
-      </div>
-
-   </div> <!-- Page Title End-->
+   <?php echo get_post_format() ?>
+   <?php the_post() ?>
+   
+   <!-- Page Title End-->
 
    <!-- Content
    ================================================== -->
@@ -24,38 +14,10 @@
       <div id="page-content" class="row">
 
          <div id="primary" class="eight columns">
+         
+            <?php get_template_part( 'post-templates/post', get_post_format() ); ?>
 
-            <article class="post">
-
-               <div class="entry-header cf">
-
-                  <h1><a href="single.html" title=""><?php the_title(); ?></a></h1>
-
-                  <p class="post-meta">
-
-                     <time class="date" datetime="2014-01-14T11:24">Jan 14, 2014</time>
-                     /
-                     <span class="categories">
-                     <a href="#">Design</a> /
-                     <a href="#">User Inferface</a> /
-                     <a href="#">Web Design</a>
-                     </span>
-
-                  </p>
-
-               </div>
-
-               <div class="post-thumb">
-                  <?php the_post_thumbnail(); ?>
-               </div>               
-
-               <div class="post-content">
-                  <?php the_post() ?>
-                  <?php the_content(); ?>
-               </div>
-               
-
-            </article> <!-- post end -->
+            <!-- post end -->-->
 
 
          </div> <!-- Primary End-->

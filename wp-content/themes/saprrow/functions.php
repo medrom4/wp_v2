@@ -41,6 +41,7 @@
 		register_nav_menu( 'top', 'Меню в шапке' );
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails', array( 'post' ) );
+		add_theme_support( 'post-formats', array( 'video', 'aside' ) );
 		add_image_size( 'post_thumb', 1300, 500, true);
 		
 
