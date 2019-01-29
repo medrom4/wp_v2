@@ -2,8 +2,8 @@
 
    <!-- Page Title
    ================================================== -->
-   <?php echo get_post_format() ?>
-   <?php the_post() ?>
+   
+   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
    
    <!-- Page Title End-->
 
@@ -17,7 +17,7 @@
          
             <?php get_template_part( 'post-templates/post', get_post_format() ); ?>
 
-            <!-- post end -->-->
+            <!-- post end -->
 
 
          </div> <!-- Primary End-->
@@ -68,5 +68,9 @@
       </div>
 
    </section> <!-- Tweets Section End-->
+   
+   <?php endwhile; else: ?>
+   <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+   <?php endif; ?>
 
-<?php get_footer() ?>
+   <?php get_footer(); ?>
