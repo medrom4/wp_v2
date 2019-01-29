@@ -8,6 +8,38 @@
     add_filter( 'document_title_separator', 'my_sep' );
     add_filter( 'the_content', 'test_content' );
     
+    add_action('init', 'my_custom_init');
+    function my_custom_init(){
+    	register_post_type('portfolio', array(
+    		    'labels'             => array(
+    			'name'               => 'Портфолио', // Основное название типа записи
+    			'singular_name'      => 'Портфолио', // отдельное название записи типа Book
+    			'add_new'            => 'Добавить работу',
+    			'add_new_item'       => 'Добавить новую работу',
+    			'edit_item'          => 'Редактировать работу',
+    			'new_item'           => 'Новая работа',
+    			'view_item'          => 'Посмотреть работу',
+    			'search_items'       => 'Найти работу',
+    			'not_found'          =>  'Работа не найдено',
+    			'not_found_in_trash' => 'В корзине не найдено',
+    			'parent_item_colon'  => '',
+    			'menu_name'          => 'Портфолио'
+    
+    		  ),
+    		'menu_icon'          => 'dashicons-format-gallery',
+    		'public'             => true,
+    		'publicly_queryable' => true,
+    		'show_ui'            => true,
+    		'show_in_menu'       => true,
+    		'query_var'          => true,
+    		'rewrite'            => true,
+    		'capability_type'    => 'post',
+    		'has_archive'        => true,
+    		'hierarchical'       => false,
+    		'menu_position'      => 4,
+    		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
+    	) );
+    }
     
     function test_content($content){
         $content .= 'Спасибо!';
@@ -40,7 +72,7 @@
 	function theme_register_nav_menu() {
 		register_nav_menu( 'top', 'Меню в шапке' );
 		add_theme_support( 'title-tag' );
-		add_theme_support( 'post-thumbnails', array( 'post' ) );
+		add_theme_support( 'post-thumbnails', array( 'post', 'portfolio' ) );
 		add_theme_support( 'post-formats', array( 'video', 'aside' ) );
 		add_image_size( 'post_thumb', 1300, 500, true);
 		
