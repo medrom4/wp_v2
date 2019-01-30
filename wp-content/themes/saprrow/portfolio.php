@@ -50,9 +50,9 @@
                <div id="portfolio-wrapper" class="bgrid-halves cf">           
             
                 <?php   
-                      // параметры по умолчанию
+
                       $args = array(
-                      	'numberposts' => 5,
+                      	'numberposts' => 3,
                       	'post_type'   => 'portfolio',
                       	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
                       );
@@ -70,14 +70,14 @@
                                 </a>
                               <div class="portfolio-item-meta">
                           		 <h5><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
-                                 <p><?php the_excerpt(); ?></p>
+                                 <p><?php the_excerpt() ?></p>
                          	   </div>
                             </div>
                     	    </div>       
                          <?php
                       }
                       
-                      wp_reset_postdata(); // сброс   
+                      wp_reset_postdata();
                ?>                 
 
                </div>
