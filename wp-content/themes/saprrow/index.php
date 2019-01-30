@@ -1,4 +1,4 @@
-<?php  get_header(); ?>
+<?php get_header() ?>
 
 <!-- Intro Section
 ================================================== -->
@@ -293,4 +293,4 @@
 
 </section> <!-- Tweet Section End-->
 
-<?php  get_footer(); ?>
+<?php  get_footer() ?>

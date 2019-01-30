@@ -8,8 +8,8 @@
     add_filter( 'document_title_separator', 'my_sep' );
     add_filter( 'the_content', 'test_content' );
     
-    add_action('init', 'my_custom_init');
-    function my_custom_init(){
+    add_action('init', 'my_post_types');
+    function my_post_types(){
     	register_post_type('portfolio', array(
     		    'labels'             => array(
     			'name'               => 'Портфолио', // Основное название типа записи
@@ -20,7 +20,7 @@
     			'new_item'           => 'Новая работа',
     			'view_item'          => 'Посмотреть работу',
     			'search_items'       => 'Найти работу',
-    			'not_found'          =>  'Работа не найдено',
+    			'not_found'          => 'Работа не найдено',
     			'not_found_in_trash' => 'В корзине не найдено',
     			'parent_item_colon'  => '',
     			'menu_name'          => 'Портфолио'

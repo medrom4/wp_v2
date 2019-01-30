@@ -1,10 +1,10 @@
 <?php 
     /*
-    Template Name: Портфолио
+    Template Name: Портфолиоoooo
     */
 ?>
 
-    <?php get_header() ?>
+    <?php get_header(); ?>
 
    <!-- Page Title
    ================================================== -->
@@ -13,7 +13,10 @@
       <div class="row">
 
          <div class="ten columns centered text-center">
-            <h1>Our Amazing Works<span>.</span></h1>        
+            <h1>Our Amazing Works<span>.</span></h1>
+
+            <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
+            enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
          </div>
 
       </div>
@@ -43,7 +46,8 @@
             </div> <!-- Secondary End-->
 
             <div id="primary" class="eight columns portfolio-list">
-            <div id="portfolio-wrapper" class="bgrid-halves cf">            
+
+               <div id="portfolio-wrapper" class="bgrid-halves cf">           
             
                 <?php   
                       // параметры по умолчанию
@@ -59,13 +63,13 @@
                          ?>                             
                           <div class="columns portfolio-item">
                             <div class="item-wrap">
-                          		<a href="portfolio.html">
+                          		<a href="<?php the_permalink() ?>">
                                        <?php the_post_thumbnail(); ?>
                                     <div class="overlay"></div>
-                                    <div class="link-icon"><i class="fa fa-link"></i></div>
+                                    <div class="link-ic on"><i class="fa fa-link"></i></div>
                                 </a>
                               <div class="portfolio-item-meta">
-                          		 <h5><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h5>
+                          		 <h5><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
                                  <p><?php the_excerpt(); ?></p>
                          	   </div>
                             </div>
@@ -78,7 +82,13 @@
 
                </div>
 
-            </div> <!-- content End-->
+            </div> <!-- primary end-->
+
+         </section> <!-- end section -->
+
+      </div> <!-- #page-content end-->
+
+   </div> <!-- content End-->
 
    <!-- Tweets Section
    ================================================== -->
@@ -117,4 +127,4 @@
 
    </section> <!-- Tweet Section End-->
 
-   <?php get_footer(); ?>
+   <?php get_footer() ?>
