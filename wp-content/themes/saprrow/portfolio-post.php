@@ -46,7 +46,7 @@
                   </div>
 
                   <ul class="portfolio-meta-list">
-						   <li><span>Date: </span><?php the_field('project-date'); ?></li>
+						   <li><span>Date: </span><?php the_field('project_date'); ?></li>
 						   <li><span>Client </span><?php the_field('client'); ?></li>
 						   <li><span>Skills: </span>Photoshop, Photography, Branding</li>
 				      </ul>
