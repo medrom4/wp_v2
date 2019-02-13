@@ -81,7 +81,22 @@
     		'menu_position'      => 4,
     		'supports'           => array('title','editor','author','thumbnail','excerpt','comments')
     	) );
-    }    
+    }
+    
+    ///////////////////////////////////////////////////
+    ////////////////САЙДБАР////////////////////////////
+    add_action( 'widgets_init', 'register_my_widgets' );
+    function register_my_widgets(){
+    	register_sidebar( array(
+    		'name'          => 'Left Sidebar',
+    		'id'            => "left_sidebar",
+    		'description'   => 'Описание моего сайдбара',
+		    'before_widget' => '<div class="widget %2$s">',
+		    'after_widget'  => "</div>\n",
+		    'before_title'  => '<h5 class="widgettitle">',
+		    'after_title'   => "</h5>\n"
+    	) );
+    }
     
     
     
