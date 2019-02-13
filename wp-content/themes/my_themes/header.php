@@ -12,15 +12,6 @@
    ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url') ?>">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
 
    <!-- Favicons
 	================================================== -->
@@ -48,6 +39,8 @@
             <nav id="nav-wrap">
 					<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
 					<a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+					
+					
 					<?php wp_nav_menu(array(
 					'theme_location'  => 'top',
 					'container'       =>  null,
