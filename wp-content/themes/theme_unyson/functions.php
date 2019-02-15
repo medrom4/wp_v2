@@ -159,3 +159,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+
+
+/**
+ * Load TGM.
+ */
+require get_template_directory() . '/tgm/theme-unyson.php';
+
